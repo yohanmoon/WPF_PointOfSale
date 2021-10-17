@@ -1,0 +1,47 @@
+Customer Account
+-Customer Id
+- first name
+- middle initial
+- last name
+-gender
+-phone number
+-email address
+- Order list
+
+Order
+
+Garment
+-Top
+	-Jacket
+	-Blazer
+	-Hoodies
+	-Shirt
+	-TShirt
+	
+
+-Bottom
+	-Jean
+	-Skirt
+	-Dress pants
+	Short
+
+-Dress
+
+-Other
+
+
+Job
+-Hem
+	-original hem
+	-blind stitch
+-Taper
+-taking in a seam
+-letting out a seam
+-Lengthening
+-Shoulder
+-Zipper
+	-Fix
+	-Replacement
+-Button
+
+
