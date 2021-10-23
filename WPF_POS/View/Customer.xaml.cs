@@ -31,5 +31,11 @@ namespace WPF_POS.View
             AddCustomer _addCustomer = new AddCustomer();
             _addCustomer.ShowDialog();
         }
+
+        private void EditCust_Page_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            EditCustomer _editCustomer = new EditCustomer();
+            _editCustomer.ShowDialog();
+        }
     }
 }

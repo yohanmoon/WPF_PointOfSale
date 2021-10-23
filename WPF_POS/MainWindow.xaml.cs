@@ -1,4 +1,4 @@
-﻿using Caliburn.Micro;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +29,8 @@ namespace WPF_POS
             HomeButton.Focus(); //To make home button highlight when loaded, since home page is loaded
             Display_Date(); //to start the datetime
         }
+
+        
 
         #region NAVATE TO DIFF PAGE
         private void Navigate_HomePage(object sender, RoutedEventArgs e)

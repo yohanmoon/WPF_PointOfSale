@@ -26,12 +26,13 @@
                 </Grid.ColumnDefinitions>
 
                      <!--Title-->
-                <TextBlock Text="New Customer" Style="{StaticResource TextPopUpWindow}"
+                <TextBlock Text="New Customer" Style="{StaticResource TextPopUpWindow}" FontSize="30"
                            HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" 
-                           Margin="20,25,20,0"   Width="200"
+                           Margin="20,25,20,0"   Width="Auto"
                            TextAlignment="Center" />
-                <Separator HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" 
-                           VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"
+                <Separator HorizontalAlignment="Center"  Height="100" Margin="0,20,0,0" 
+                           VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Background="#007ACC"
+                           
                            />
 
 
@@ -58,26 +59,23 @@
 
 
                <!--Textbox-->
-                <TextBox x:Name="addLastNameTxt"
-                    Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,124,0,0" 
-                         TextWrapping="Wrap"  VerticalAlignment="Top" Width="160" />
-                <TextBox x:Name="addFirstNameTxt"
-                    Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,164,0,0" 
-                         TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
-                <TextBox x:Name="addMiddleNameTxt"
-                    Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,204,0,0" 
-                         TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+                <TextBox x:Name="addLastNameTxt" Style="{StaticResource TextBoxStyle}"
+                    Grid.Column="1" Margin="0,124,0,0" Width="160" />
+                <TextBox x:Name="addFirstNameTxt" Style="{StaticResource TextBoxStyle}"
+                    Grid.Column="1"  Margin="0,164,0,0" Width="160"/>
+                <TextBox x:Name="addMiddleNameTxt" Style="{StaticResource TextBoxStyle}"
+                    Grid.Column="1"   Margin="0,204,0,0" Width="50"/>
                 
                     <RadioButton GroupName="GenderButton" x:Name="MaleButton" Content="Male" 
                                  Grid.Column="1" Margin="0,247,0,220" FontSize="15"/>
                 
                 <RadioButton GroupName="GenderButton" x:Name="FemaleButton" Content="Female" 
                              Grid.Column="1" Margin="80,247,0,220" FontSize="15"/>
-                
-                
-                <TextBox x:Name="addPhoneNumbTxt"
-                    Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,284,0,0" 
-                         TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+
+
+                <TextBox x:Name="addPhoneNumbTxt" Style="{StaticResource TextBoxStyle}"
+                    Grid.Column="1" HorizontalAlignment="Left"  Margin="0,284,0,0" 
+                            Width="160"/>
 
                 <!--Add Cancel Buttons-->
                 <Button x:Name="AddNewCust" Content="Add" Click="AddNewCust_Click"

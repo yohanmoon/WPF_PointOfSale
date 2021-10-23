@@ -5,11 +5,119 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_POS.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="LightCyan">
-        <Button x:Name="addCust_Page" Content="Add Customer" 
-                Click="addCust_Page_Btn_Click" HorizontalAlignment="Left" Margin="360,132,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Label" HorizontalAlignment="Left" Height="44" Margin="184,64,0,0" VerticalAlignment="Top" Width="191"/>
+              
+             Background="Transparent">
 
-    </Grid>
+
+
+    <Border Style="{StaticResource ViewBorder}">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- SEARCH CUSTOMER DATA ENTRY-->
+            <GroupBox Header="Search Customer"  Grid.Row="0" Grid.Column="0" Margin="15" 
+                      Background="#F5F5F5" BorderBrush="#659AD3" FontSize="18">
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Last Name :" 
+                            Style="{StaticResource TextPopUpWindow}"
+                           Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"
+                           Margin="10"/>
+
+                    <TextBlock Text=" or"
+                        Style="{StaticResource TextPopUpWindow}"
+                           Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           />
+                    <TextBlock Text="Phone Number :"
+                        Style="{StaticResource TextPopUpWindow}"
+                           Grid.Column="0" Grid.Row="3"
+                           Margin="10"/>
+
+
+                    <TextBox x:Name="txtSearchLastName" Style="{StaticResource TextBoxStyle}"
+                             Grid.Column="1" Grid.Row="0" Width="200" VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="txtSearchPhoneNum" Style="{StaticResource TextBoxStyle}"
+                                                  
+                             Grid.Column="1" Grid.Row="3" Width="200" VerticalAlignment="Center"/>
+
+
+                    <Button Content="Search" Style="{StaticResource GeneralButtonStyle}"
+                            Grid.Column="2" Grid.RowSpan="4" Height="50" Width="150"
+                            Margin="20,0" FontSize="20"/>
+                    
+                    <Button Content="Show All" Style="{StaticResource GeneralButtonStyle}"
+                            Grid.Column="3" Grid.RowSpan="4" Height="50" Width="150"
+                            Margin="20,0" FontSize="20"/>
+
+                </Grid>
+
+
+            </GroupBox>
+
+            <Button x:Name="EditCust_Page" Content="Edit Selected" 
+                Grid.Column="1" 
+                    Height="50" Width="230"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,10,10,20"
+                Style="{StaticResource GeneralButtonStyle}" Click="EditCust_Page_Btn_Click"
+                 
+                />
+
+            <Button x:Name="addCust_Page" Content="Add Customer" 
+                Grid.Column="1" 
+                    Height="50" Width="230" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,20,10,10"
+                Style="{StaticResource GeneralButtonStyle}" 
+                Click="addCust_Page_Btn_Click"  
+                />
+
+
+            <!--DATA VIWER-->
+            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
+                <DataGrid x:Name="DataGridSearchCustomer" IsReadOnly="True"
+                          BorderBrush="Transparent" FontSize="18" Background="#FFFFFF">
+                    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                                            Header="Phone Number" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="250"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                                            Header="Last Name" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="300"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                                            Header="First Name" CanUserReorder="False" CanUserResize="False" FontSize="18" MinWidth="300"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                                            Header="Mid" CanUserResize="False" FontSize="18" MaxWidth="100" MinWidth="50"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                                            Header="Gender" CanUserResize="False" MaxWidth="100" MinWidth="50" FontSize="18"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                                            Header="Last Visit" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="300"/>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </ScrollViewer>
+
+
+
+
+        </Grid>
+    </Border>
+
 </UserControl>
