@@ -1,12 +1,11 @@
-﻿<UserControl x:Class="WPF_POS.View.PickUp"
+﻿<UserControl x:Class="WPF_PointOfSale.View.PickUp"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WPF_POS.View"
+             xmlns:local="clr-namespace:WPF_PointOfSale.View"
              mc:Ignorable="d" 
-             
-             >
+            >
     <Border Style="{StaticResource ViewBorder}">
         <Grid>
 
@@ -23,7 +22,7 @@
             <!-- SEARCH CUSTOMER DATA ENTRY-->
             <GroupBox Header="Search Invoice"   Grid.Row="0" Grid.Column="0" Margin="15"
                               Background="#F5F5F5" BorderBrush="#659AD3" FontSize="18">
-                
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -113,7 +112,7 @@
             <GroupBox Header="Invoice"   Grid.Row="0" Grid.Column="1" MinWidth="400" Margin="15" 
                       BorderBrush="#659AD3" Grid.RowSpan="2" Background="WhiteSmoke" FontSize="18"
                       >
-                
+
             </GroupBox>
         </Grid>
     </Border>

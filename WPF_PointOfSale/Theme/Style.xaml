@@ -5,10 +5,10 @@
     <!--659AD3 light blue
     FFFFFF white
     F5F5F5 gray?-->
-    
-    
-    
-    
+
+
+
+
     <!--Menu Button-->
     <Style x:Key="MenuButtonStyle" 
          TargetType="{x:Type Button}"
@@ -54,18 +54,18 @@
         </Style.Triggers>
     </Style>
 
-    
-    
+
+
     <!---TextBlock-->
     <Style x:Key="TextPopUpWindow" TargetType="{x:Type TextBlock}">
         <Style.Setters>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="ExtraBlack"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
-            
+
         </Style.Setters>
     </Style>
- 
+
     <!--TextBox-->
     <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}"    >
         <Style.Setters>
@@ -75,10 +75,10 @@
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
         </Style.Setters>
-        
+
     </Style>
 
-    
+
     <!--GeneralButton-->
     <!--BasedOn="{StaticResource MenuButtonStyle}" not anymore-->
     <Style x:Key="GeneralButtonStyle" 
@@ -103,28 +103,24 @@
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
-                
+
             </Setter>
             <Setter Property="Background" Value="LightGray"/>
-                <Setter Property="Foreground" Value="Black"/>
-            
+            <Setter Property="Foreground" Value="Black"/>
+
 
 
         </Style.Setters>
-        
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#659AD3"/>
-                    <Setter Property="TextBlock.Foreground" Value="White"/>
-                </Trigger>
 
-            </Style.Triggers>
-       
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#659AD3"/>
+                <Setter Property="TextBlock.Foreground" Value="White"/>
+            </Trigger>
+
+        </Style.Triggers>
+
     </Style>
 
-    
-    
-    
-    
 
 </ResourceDictionary>
