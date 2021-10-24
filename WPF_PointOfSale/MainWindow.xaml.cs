@@ -25,7 +25,7 @@ namespace WPF_PointOfSale
         {
             InitializeComponent();
 
-            HomeButton.Focus(); //To make home button highlight when loaded, since home page is loaded
+            HomeMenuList.SelectedItem = HomePg;//To make home button highlight when loaded, since home page is loaded
             Display_Date(); //to start the datetime
         }
 
@@ -78,29 +78,41 @@ namespace WPF_PointOfSale
             switch (Application.Current.MainWindow.WindowState)
             {
                 case WindowState.Maximized:
-                    // fullscreenButton.ToolTip = "Restore"; //this is working backward
+                    fullscreenButton.ToolTip = "Fullscreen"; //this is working backward
+                    
+                    
+                    FullScreenExit.Visibility = Visibility.Collapsed;
+                    FullScreen.Visibility = Visibility.Visible;
                     this.WindowState = WindowState.Normal;
                     break;
                 case WindowState.Normal:
-                    // fullscreenButton.ToolTip = "Full Screen";
+                    fullscreenButton.ToolTip = "Normal Screen";
+                    
+                    
+                    FullScreenExit.Visibility = Visibility.Visible;
+                    FullScreen.Visibility = Visibility.Collapsed;
                     this.WindowState = WindowState.Maximized;
                     break;
 
             }
 
 
-            //if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
-            //{
-            //    this.WindowState = WindowState.Maximized;
-            //}
-            //else
-            //{
-            //    this.WindowState = WindowState.Normal;
-            //}
-        }
+            //    if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
+            //    {
+            //        FullScreenExit.Visibility = Visibility.Hidden;
+            //        FullScreen.Visibility = Visibility.Visible;
+            //        this.WindowState = WindowState.Maximized;
+            //    }
+            //    else
+            //    {
+            //        FullScreenExit.Visibility = Visibility.Visible;
+            //        FullScreen.Visibility = Visibility.Hidden;
+            //        this.WindowState = WindowState.Normal;
+            //    }
+            }
 
 
-        private void dragWindow(object sender, MouseButtonEventArgs e)
+            private void dragWindow(object sender, MouseButtonEventArgs e)
         {
 
             this.DragMove();

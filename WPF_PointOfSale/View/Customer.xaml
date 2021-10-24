@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:WPF_PointOfSale.View"
              mc:Ignorable="d" 
               
@@ -24,7 +25,7 @@
 
             <!-- SEARCH CUSTOMER DATA ENTRY-->
             <GroupBox Header="Search Customer"  Grid.Row="0" Grid.Column="0" Margin="15" 
-                      Background="#F5F5F5" BorderBrush="#659AD3" FontSize="18">
+                      Style="{StaticResource MaterialDesignGroupBox}" FontSize="18">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -63,11 +64,13 @@
                              Grid.Column="1" Grid.Row="3" Width="200" VerticalAlignment="Center"/>
 
 
-                    <Button Content="Search" Style="{StaticResource GeneralButtonStyle}"
+                    <Button Content="Search" Style="{StaticResource MaterialDesignPaperLightButton}"
+                            materialDesign:ButtonAssist.CornerRadius="10"
                             Grid.Column="2" Grid.RowSpan="4" Height="50" Width="150"
                             Margin="20,0" FontSize="20"/>
 
-                    <Button Content="Show All" Style="{StaticResource GeneralButtonStyle}"
+                    <Button Content="Show All" Style="{StaticResource MaterialDesignPaperLightButton}"
+                            materialDesign:ButtonAssist.CornerRadius="10"
                             Grid.Column="3" Grid.RowSpan="4" Height="50" Width="150"
                             Margin="20,0" FontSize="20"/>
 
@@ -79,21 +82,21 @@
             <Button x:Name="EditCust_Page" Content="Edit Selected" 
                 Grid.Column="1" 
                     Height="50" Width="230"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,10,10,20"
-                Style="{StaticResource GeneralButtonStyle}" Click="EditCust_Page_Btn_Click"
+                Style="{StaticResource MaterialDesignPaperButton}" materialDesign:ButtonAssist.CornerRadius="10"
+                    FontSize="20" Click="EditCust_Page_Btn_Click"
                  
                 />
 
             <Button x:Name="addCust_Page" Content="Add Customer" 
                 Grid.Column="1" 
                     Height="50" Width="230" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,20,10,10"
-                Style="{StaticResource GeneralButtonStyle}" 
-                Click="addCust_Page_Btn_Click"  
-                />
+                Style="{StaticResource MaterialDesignPaperButton}" materialDesign:ButtonAssist.CornerRadius="10"
+                    FontSize="20" Click="addCust_Page_Btn_Click"  />
 
 
             <!--DATA VIWER-->
-            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
-                <DataGrid x:Name="DataGridSearchCustomer" Style="{StaticResource DataGridStyle}">
+            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Margin="10" Style="{StaticResource MaterialDesignScrollViewer}">
+                <DataGrid x:Name="DataGridSearchCustomer" Style="{StaticResource MaterialDesignDataGrid}" FontSize="18" Background="Transparent">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 

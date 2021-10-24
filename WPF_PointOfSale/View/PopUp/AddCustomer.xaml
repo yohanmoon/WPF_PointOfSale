@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_PointOfSale.View.PopUp"
-        xmlns:View="clr-namespace:WPF_PointOfSale.View" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         mc:Ignorable="d"
         Title="Add Customer" Height="500" Width="500" Topmost="True" 
         WindowStartupLocation="CenterScreen" ShowInTaskbar="False" 
@@ -26,12 +27,16 @@
                 </Grid.ColumnDefinitions>
 
                 <!--Title-->
-                <TextBlock Text="New Customer" Style="{StaticResource TextPopUpWindow}" FontSize="30"
-                           HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" 
-                           Margin="20,25,20,0"   Width="Auto"
+                <StackPanel Orientation="Horizontal" Margin="20,20,20,430" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="AccountAdd" Height="50" Width="50" Foreground="#659AD3"/>
+                    <TextBlock Text="New Customer" Style="{StaticResource TextPopUpWindow}" FontSize="30"
+                            VerticalAlignment="Bottom"  Margin="20,0,0,0"
+                              Width="Auto"
                            TextAlignment="Center" />
+                </StackPanel>
+                
                 <Separator HorizontalAlignment="Center"  Height="100" Margin="0,20,0,0" 
-                           VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Background="#007ACC"
+                           VerticalAlignment="Top" Width="350" Grid.ColumnSpan="2" Background="#007ACC"
                            
                            />
 
@@ -60,17 +65,18 @@
 
                 <!--Textbox-->
                 <TextBox x:Name="addLastNameTxt" Style="{StaticResource TextBoxStyle}"
-                    Grid.Column="1" Margin="0,124,0,0" Width="160" />
+                    Grid.Column="1" Margin="0,124,0,0" Width="160" 
+                         materialDesign:HintAssist.Hint="Last Name"/>
                 <TextBox x:Name="addFirstNameTxt" Style="{StaticResource TextBoxStyle}"
                     Grid.Column="1"  Margin="0,164,0,0" Width="160"/>
                 <TextBox x:Name="addMiddleNameTxt" Style="{StaticResource TextBoxStyle}"
                     Grid.Column="1"   Margin="0,204,0,0" Width="50"/>
 
-                <RadioButton GroupName="GenderButton" x:Name="MaleButton" Content="Male" 
-                                 Grid.Column="1" Margin="0,247,0,220" FontSize="15"/>
+                <RadioButton GroupName="GenderButton" x:Name="MaleButton" Content="Male" Style="{DynamicResource MaterialDesignAccentRadioButton}"
+                                 Grid.Column="1" Margin="0,235,0,220" FontSize="15"/>
 
-                <RadioButton GroupName="GenderButton" x:Name="FemaleButton" Content="Female" 
-                             Grid.Column="1" Margin="80,247,0,220" FontSize="15"/>
+                <RadioButton GroupName="GenderButton" x:Name="FemaleButton" Content="Female" Style="{DynamicResource MaterialDesignAccentRadioButton}"
+                             Grid.Column="1" Margin="80,235,0,220" FontSize="15"/>
 
 
                 <TextBox x:Name="addPhoneNumbTxt" Style="{StaticResource TextBoxStyle}"
@@ -80,10 +86,12 @@
                 <!--Add Cancel Buttons-->
                 <Button x:Name="AddNewCust" Content="Add" Click="AddNewCust_Click"
                 HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,400,30,0"
-                Width="130" Height="55" Grid.Column="0"  Style="{DynamicResource GeneralButtonStyle}"/>
+                Width="130" Height="55" Grid.Column="0" FontSize="20" Style="{DynamicResource MaterialDesignPaperButton}"
+                        materialDesign:ButtonAssist.CornerRadius="10"/>
                 <Button Content="Cancel" Grid.Column="1" 
                         HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="30,400,0,0"
-                         Width="130" Height="55" Style="{DynamicResource GeneralButtonStyle}"
+                         Width="130" Height="55" FontSize="20" Style="{DynamicResource MaterialDesignPaperButton}"
+                        materialDesign:ButtonAssist.CornerRadius="10"
                         Click="Cancel_Click"/>
 
 
