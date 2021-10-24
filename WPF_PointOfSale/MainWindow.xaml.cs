@@ -14,7 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading; //Timer
 
-namespace WPF_PointOfSale
+
+namespace WPF_POS_NETCORE
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

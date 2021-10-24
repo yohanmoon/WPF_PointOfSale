@@ -25,12 +25,12 @@ namespace WPF_POS
         public MainWindow()
         {
             InitializeComponent();
-            
-            HomeButton.Focus(); //To make home button highlight when loaded, since home page is loaded
+
+            //HomeMenuList.SelectedItem = HomePg; //If I was using Menu ListView
+            HomeButton.IsChecked = true;
             Display_Date(); //to start the datetime
         }
 
-        
 
         #region NAVATE TO DIFF PAGE
         private void Navigate_HomePage(object sender, RoutedEventArgs e)
@@ -79,33 +79,45 @@ namespace WPF_POS
             switch (Application.Current.MainWindow.WindowState)
             {
                 case WindowState.Maximized:
-                    // fullscreenButton.ToolTip = "Restore"; //this is working backward
+                    fullscreenButton.ToolTip = "Fullscreen"; //this is working backward
+
+
+                    FullScreenExit.Visibility = Visibility.Collapsed;
+                    FullScreen.Visibility = Visibility.Visible;
                     this.WindowState = WindowState.Normal;
                     break;
                 case WindowState.Normal:
-                    // fullscreenButton.ToolTip = "Full Screen";
+                    fullscreenButton.ToolTip = "Normal Screen";
+
+
+                    FullScreenExit.Visibility = Visibility.Visible;
+                    FullScreen.Visibility = Visibility.Collapsed;
                     this.WindowState = WindowState.Maximized;
                     break;
 
             }
 
 
-            //if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
-            //{
-            //    this.WindowState = WindowState.Maximized;
-            //}
-            //else
-            //{
-            //    this.WindowState = WindowState.Normal;
-            //}
+            //    if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
+            //    {
+            //        FullScreenExit.Visibility = Visibility.Hidden;
+            //        FullScreen.Visibility = Visibility.Visible;
+            //        this.WindowState = WindowState.Maximized;
+            //    }
+            //    else
+            //    {
+            //        FullScreenExit.Visibility = Visibility.Visible;
+            //        FullScreen.Visibility = Visibility.Hidden;
+            //        this.WindowState = WindowState.Normal;
+            //    }
         }
 
 
         private void dragWindow(object sender, MouseButtonEventArgs e)
         {
-            
-                this.DragMove();
-            
+
+            this.DragMove();
+
         }
 
         #endregion
@@ -125,7 +137,7 @@ namespace WPF_POS
         {
 
             this.labelDateTime.Content = DateTime.Now.ToString("dddd   MM/dd/yyyy   h:mm:ss tt");
-            
+
 
         }
         #endregion

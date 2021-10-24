@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPF_PointOfSale.View.PopUp
+namespace WPF_POS_NETCORE.View.PopUp
 {
     /// <summary>
     /// Interaction logic for AddCustomer.xaml

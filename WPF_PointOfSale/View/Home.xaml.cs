@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace WPF_PointOfSale.View
+namespace WPF_POS_NETCORE.View
 {
     /// <summary>
     /// Interaction logic for Home.xaml

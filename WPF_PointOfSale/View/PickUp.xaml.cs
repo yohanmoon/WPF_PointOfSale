@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPF_PointOfSale.View.PopUp;
+using WPF_POS_NETCORE.View.PopUp;
 
-namespace WPF_PointOfSale.View
+namespace WPF_POS_NETCORE.View
 {
     /// <summary>
     /// Interaction logic for PickUp.xaml

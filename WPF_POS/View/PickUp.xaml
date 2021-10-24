@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:WPF_POS.View"
              mc:Ignorable="d" 
-             
-             >
+            >
     <Border Style="{StaticResource ViewBorder}">
         <Grid>
 
@@ -19,11 +19,11 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
+            <!--Background="#F5F5F5" BorderBrush="#659AD3" FontSize="18"-->
             <!-- SEARCH CUSTOMER DATA ENTRY-->
             <GroupBox Header="Search Invoice"   Grid.Row="0" Grid.Column="0" Margin="15"
-                              Background="#F5F5F5" BorderBrush="#659AD3" FontSize="18">
-                
+                              Style="{StaticResource MaterialDesignGroupBox}" FontSize="15">
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -40,44 +40,37 @@
                         <RowDefinition Height="Auto"/>
 
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Invoice # : " 
-                            Style="{StaticResource TextPopUpWindow}"
-                           Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"
-                           Margin="10"/>
+                    <RadioButton               GroupName="SearchInvoice"  Style="{StaticResource MaterialDesignAccentRadioButton}"         
+                           Grid.Column="0" Grid.Row="0"  FontWeight="Bold"
+                           Margin="10" >Invoice Number</RadioButton>
 
-                    <TextBlock Text=" or"
-                        Style="{StaticResource TextPopUpWindow}"
-                           Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           />
-                    <TextBlock Text="Phone Number :"
-                        Style="{StaticResource TextPopUpWindow}"
-                           Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Margin="10"/>
-                    <TextBlock Text=" or"
-                        Style="{StaticResource TextPopUpWindow}"
-                           Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           />
-                    <TextBlock Text="Last Name :"
-                        Style="{StaticResource TextPopUpWindow}"
-                           Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Margin="10"/>
+
+                    <RadioButton  GroupName="SearchInvoice" Style="{StaticResource MaterialDesignAccentRadioButton}" 
+                           Grid.Column="0" Grid.Row="3"  FontWeight="Bold"
+                           Margin="10">Phone Number</RadioButton>
+
+                    <RadioButton  GroupName="SearchInvoice" Style="{StaticResource MaterialDesignAccentRadioButton}" 
+                           Grid.Column="0" Grid.Row="5"  FontWeight="Bold"
+                           Margin="10">Last Name</RadioButton>
+
+
 
 
                     <TextBox x:Name="txtSearchInvoice" Style="{StaticResource TextBoxStyle}"
-                             Grid.Column="1" Grid.Row="0" Width="200" VerticalAlignment="Center"/>
-
-                    <TextBox x:Name="txtSearchPhoneNum" Style="{StaticResource TextBoxStyle}"
                                                   
                              Grid.Column="1" Grid.Row="3" Width="200" VerticalAlignment="Center"/>
 
-                    <TextBox x:Name="txtSearchLastName" Style="{StaticResource TextBoxStyle}"
-                                                  
-                             Grid.Column="1" Grid.Row="5" Width="200" VerticalAlignment="Center"/>
 
-
-                    <Button Content="Search" Style="{StaticResource GeneralButtonStyle}"
+                    <!--Search Btn-->
+                    <Button  Style="{StaticResource MaterialDesignPaperLightButton}"
+                            materialDesign:ButtonAssist.CornerRadius="10"
                             Grid.Column="2" Grid.RowSpan="6" Height="50" Width="150"
-                            Margin="60,0" FontSize="20"/>
+                            Margin="60,0" FontSize="20">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search" Height="30" Width="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Search" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
 
                 </Grid>
@@ -87,33 +80,35 @@
 
             <!--LIST-->
 
-
-
-            <DataGrid x:Name="DataGridSearchInvoice" Style="{StaticResource DataGridStyle}"
-                      Grid.Row="1" Grid.Column="0" Margin="15"
-                      >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+            <ScrollViewer Grid.Row="1" Grid.Column="0" Margin="15" Style="{StaticResource MaterialDesignScrollViewer}">
+                <DataGrid x:Name="DataGridSearchInvoice" Style="{StaticResource MaterialDesignDataGrid}"
+                       Background="Transparent">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
                                         FontSize="18" Header="Invoice #" MinWidth="140" CanUserResize="False"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
                                         FontSize="18" Header="Last Name" MinWidth="140" CanUserResize="False"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
                                         FontSize="18" Header="First Name" MinWidth="100" CanUserResize="False"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
                                         FontSize="18" Header="Drop Off Date" MinWidth="120" CanUserResize="False"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
                                         FontSize="18" Header="Ready Date" MinWidth="120" CanUserResize="False"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
                                         FontSize="18" Header="Payment" MinWidth="70" CanUserResize="False"/>
-                </DataGrid.Columns>
+                    </DataGrid.Columns>
 
-            </DataGrid>
+                </DataGrid>
+            </ScrollViewer>
+
 
             <!--INVOICE-->
             <GroupBox Header="Invoice"   Grid.Row="0" Grid.Column="1" MinWidth="400" Margin="15" 
-                      BorderBrush="#659AD3" Grid.RowSpan="2" Background="WhiteSmoke" FontSize="18"
+                      Grid.RowSpan="2"  FontSize="15"
+                      Style="{StaticResource MaterialDesignGroupBox}"
                       >
-                
+
+
             </GroupBox>
         </Grid>
     </Border>
