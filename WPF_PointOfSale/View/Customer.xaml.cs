@@ -36,5 +36,7 @@ namespace WPF_PointOfSale.View
             EditCustomer _editCustomer = new EditCustomer();
             _editCustomer.ShowDialog();
         }
+
+        
     }
 }

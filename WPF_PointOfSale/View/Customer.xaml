@@ -25,7 +25,7 @@
 
             <!-- SEARCH CUSTOMER DATA ENTRY-->
             <GroupBox Header="Search Customer"  Grid.Row="0" Grid.Column="0" Margin="15" 
-                      Style="{StaticResource MaterialDesignGroupBox}" FontSize="18">
+                      Style="{StaticResource MaterialDesignGroupBox}" FontSize="15">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -64,39 +64,59 @@
                              Grid.Column="1" Grid.Row="3" Width="200" VerticalAlignment="Center"/>
 
 
-                    <Button Content="Search" Style="{StaticResource MaterialDesignPaperLightButton}"
+                    <Button Style="{StaticResource MaterialDesignPaperLightButton}"
                             materialDesign:ButtonAssist.CornerRadius="10"
                             Grid.Column="2" Grid.RowSpan="4" Height="50" Width="150"
-                            Margin="20,0" FontSize="20"/>
+                            Margin="20,0" FontSize="20">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search" Height="30" Width="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Search" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
-                    <Button Content="Show All" Style="{StaticResource MaterialDesignPaperLightButton}"
+                    <Button  Style="{StaticResource MaterialDesignPaperLightButton}"
                             materialDesign:ButtonAssist.CornerRadius="10"
                             Grid.Column="3" Grid.RowSpan="4" Height="50" Width="150"
-                            Margin="20,0" FontSize="20"/>
+                            Margin="20,0" FontSize="20">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="AccountSearch" Height="30" Width="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Show All" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
                 </Grid>
 
 
             </GroupBox>
 
-            <Button x:Name="EditCust_Page" Content="Edit Selected" 
+            <Button x:Name="EditCust_Page"
                 Grid.Column="1" 
                     Height="50" Width="230"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,10,10,20"
                 Style="{StaticResource MaterialDesignPaperButton}" materialDesign:ButtonAssist.CornerRadius="10"
-                    FontSize="20" Click="EditCust_Page_Btn_Click"
-                 
-                />
+                    FontSize="20" Click="EditCust_Page_Btn_Click">
+                
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Pencil" Height="30" Width="30" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Edit Customer" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
 
-            <Button x:Name="addCust_Page" Content="Add Customer" 
+            
+                <Button x:Name="addCust_Page"  
                 Grid.Column="1" 
                     Height="50" Width="230" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,20,10,10"
                 Style="{StaticResource MaterialDesignPaperButton}" materialDesign:ButtonAssist.CornerRadius="10"
-                    FontSize="20" Click="addCust_Page_Btn_Click"  />
+                    FontSize="20" Click="addCust_Page_Btn_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="AccountAdd" Height="30" Width="30" HorizontalAlignment="Center"/>
+                    <TextBlock Text="New Customer" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
 
 
             <!--DATA VIWER-->
             <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Margin="10" Style="{StaticResource MaterialDesignScrollViewer}">
-                <DataGrid x:Name="DataGridSearchCustomer" Style="{StaticResource MaterialDesignDataGrid}" FontSize="18" Background="Transparent">
+                <DataGrid x:Name="DataGridSearchCustomer" Style="{StaticResource MaterialDesignDataGrid}" FontSize="15" Background="Transparent">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 

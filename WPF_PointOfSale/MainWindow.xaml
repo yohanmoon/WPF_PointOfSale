@@ -120,7 +120,7 @@
                     <!--DropOff-->
                     <ListViewItem x:Name="DropOffPg" Height="80" Selected="Navigate_DropOffPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="TshirtCrew" Width="30" Height="30" Margin="10,0" />
+                            <materialDesign:PackIcon Kind="TshirtCrew" Foreground="Purple"  Width="30" Height="30" Margin="10,0" />
                             <TextBlock Text="Drop Off" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
@@ -128,7 +128,7 @@
                     <!--Pick Up-->
                     <ListViewItem x:Name="PickUpPg" Height="80" Selected="Navigate_PickUpPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CreditCard" Width="30" Height="30"  Margin="10,0" />
+                            <materialDesign:PackIcon Kind="CreditCard" Foreground="Navy"  Width="30" Height="30"  Margin="10,0" />
                             <TextBlock Text="Pick Up" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
@@ -136,7 +136,7 @@
                     <!--Customer-->
                     <ListViewItem x:Name="CustomerPg" Height="80" Selected="Navigate_CustomerPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Account" Width="30" Height="30" Margin="10,0" />
+                            <materialDesign:PackIcon Kind="Account" Foreground="Teal" Width="30" Height="30" Margin="10,0" />
                             <TextBlock Text="Customer" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
@@ -144,7 +144,7 @@
                     <!--Report-->
                     <ListViewItem x:Name="ReportPg" Height="80" Selected="Navigate_ReportPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ReportBar" Width="30" Height="30" Margin="10,0" />
+                            <materialDesign:PackIcon Kind="ReportBar" Foreground="Maroon" Width="30" Height="30" Margin="10,0" />
                             <TextBlock Text="Report" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>

@@ -86,7 +86,7 @@
     <!---TextBlock-->
     <Style x:Key="TextPopUpWindow" TargetType="{x:Type TextBlock}">
         <Style.Setters>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
 
@@ -195,10 +195,7 @@
         </Setter>
     </Style>
 
-   <!--ListView-->
-    <Style x:Key="">
-        
-    </Style>
+  
     
     
     

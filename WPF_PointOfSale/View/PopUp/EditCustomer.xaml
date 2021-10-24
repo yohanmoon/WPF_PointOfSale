@@ -80,15 +80,26 @@
                     Grid.Column="1"  Margin="0,284,0,0"  Width="160"/>
 
                 <!--Add Cancel Buttons-->
-                <Button x:Name="EditCust" Content="Update" Click="EditCust_Click"
+                <Button x:Name="EditCust"  Click="EditCust_Click"
                 HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,400,30,0"
-                Width="130" Height="55" Grid.Column="0" FontSize="20" Style="{DynamicResource MaterialDesignPaperButton}"
-                        materialDesign:ButtonAssist.CornerRadius="10"/>
-                <Button Content="Cancel" Grid.Column="1" 
-                        HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="30,400,0,0"
-                         Width="130" Height="55" FontSize="20" Style="{DynamicResource MaterialDesignPaperButton}"
+                Width="Auto" Height="55" Grid.Column="0" FontSize="20" Style="{DynamicResource MaterialDesignPaperButton}"
+                        materialDesign:ButtonAssist.CornerRadius="10">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Pencil" Height="30" Width="30" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Update" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+               
+                <!-- cancel btn-->
+                <Button Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="30,400,0,0"
+                         Width="Auto" Height="55" FontSize="20" Style="{DynamicResource MaterialDesignPaperButton}"
                     materialDesign:ButtonAssist.CornerRadius="10"
-                        Click="Cancel_Click"/>
+                        Click="Cancel_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Cancel" Foreground="DarkRed" Height="30" Width="30" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cancel" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
 
 
             </Grid>
