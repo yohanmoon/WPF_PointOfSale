@@ -22,7 +22,7 @@
             <!--Background="#F5F5F5" BorderBrush="#659AD3" FontSize="18"-->
             <!-- SEARCH CUSTOMER DATA ENTRY-->
             <GroupBox Header="Search Invoice"   Grid.Row="0" Grid.Column="0" Margin="15"
-                              Style="{StaticResource MaterialDesignGroupBox}" FontSize="18">
+                              Style="{StaticResource MaterialDesignGroupBox}" FontSize="15">
 
                 <Grid>
                     <Grid.ColumnDefinitions>

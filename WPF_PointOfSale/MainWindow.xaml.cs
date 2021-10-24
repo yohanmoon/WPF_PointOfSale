@@ -25,10 +25,10 @@ namespace WPF_PointOfSale
         {
             InitializeComponent();
 
-            HomeMenuList.SelectedItem = HomePg;//To make home button highlight when loaded, since home page is loaded
+            //HomeMenuList.SelectedItem = HomePg; //If I was using Menu ListView
+            HomeButton.IsChecked = true;
             Display_Date(); //to start the datetime
         }
-
 
 
         #region NAVATE TO DIFF PAGE
@@ -59,7 +59,7 @@ namespace WPF_PointOfSale
         }
         #endregion
 
-
+       
         #region EVENT HANDLER
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace WPF_PointOfSale.View
 {
     /// <summary>
@@ -23,6 +24,9 @@ namespace WPF_PointOfSale.View
         public Home()
         {
             InitializeComponent();
+            
         }
+
+       
     }
 }

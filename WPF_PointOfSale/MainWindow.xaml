@@ -59,103 +59,116 @@
             </StackPanel>
 
              <!--Menu Radiobutton/ NO LONGER USING-->
-             <!--<StackPanel Grid.Row="2" Grid.Column="0" Margin="0,100,0,0"  Background="Transparent" >
-                <materialDesign:PackIcon Kind="Home" Width="30" Height="30" Margin="15,25,0,25" />
-                <materialDesign:PackIcon Kind="Home" Width="30" Height="30" Margin="15,25,0,25"/>
-                <materialDesign:PackIcon Kind="Home" Width="30" Height="30" Margin="15,25,0,25"/>
-                <materialDesign:PackIcon Kind="Account" Width="30" Height="30" Margin="15,25,0,25"/>
-                    
-                
-            </StackPanel>
-            
+                       
             
 
-            Menu Buttons
-            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Margin="0,100,10,0">
+            <!-- Menu with Radio Buttons-->
+            <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,100,10,0">
 
 
-                <RadioButton  x:Name="HomeButton" GroupName="HomeMenu" Content="Home"
+                <RadioButton  x:Name="HomeButton" GroupName="HomeMenu" 
                          Style="{StaticResource MenuButtonStyle}"
-                        Checked="Navigate_HomePage"
-                              
-                              >
-                    
-                    
+                        Checked="Navigate_HomePage">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Home" Foreground="LightCoral" Width="30" Height="30" Margin="10,0" />
+                        <TextBlock Text="Home"   Style="{StaticResource MaterialDesignButtonTextBlock}" 
+                                       FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
+                    </StackPanel>
+
                 </RadioButton>
-                <RadioButton  GroupName="HomeMenu"  Content="Drop Off"
+                
+                <RadioButton  GroupName="HomeMenu"  
                         Style="{StaticResource MenuButtonStyle}"
                         Checked="Navigate_DropOffPage">
-                    
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="TshirtCrew" Foreground="LightSeaGreen"  Width="30" Height="30" Margin="10,0" />
+                        <TextBlock Text="Drop Off" Style="{StaticResource MaterialDesignButtonTextBlock}"
+                                        FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
+                    </StackPanel>
                 </RadioButton>
-                <RadioButton  GroupName="HomeMenu" Content="Pick Up" 
+                
+                <RadioButton  GroupName="HomeMenu"  
                         Style="{StaticResource MenuButtonStyle}"
                         Checked="Navigate_PickUpPage">
-                    
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="CreditCard" Foreground="LightSkyBlue"  Width="30" Height="30"  Margin="10,0" />
+                        <TextBlock Text="Pick Up" Style="{StaticResource MaterialDesignButtonTextBlock}"
+                                        FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
+                    </StackPanel>
                 </RadioButton>
-                <RadioButton  GroupName="HomeMenu"  Content="Customer"  
+                <RadioButton  GroupName="HomeMenu"    
                         Style="{StaticResource MenuButtonStyle}"
-                        Checked="Navigate_CustomerPage"/>
-                <RadioButton  GroupName="HomeMenu"  Content="Report" 
-                              
-                        Style="{StaticResource MaterialDesignFlatLightButton}"
+                        Checked="Navigate_CustomerPage">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Account" Foreground="MediumPurple" Width="30" Height="30" Margin="10,0" />
+                        <TextBlock Text="Customer" Style="{StaticResource MaterialDesignButtonTextBlock}"
+                                        FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton  GroupName="HomeMenu"       
+                        Style="{StaticResource MenuButtonStyle}"
                         Checked="Navigate_ReportPage">
-                    
-                    
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ReportBar" Foreground="MediumVioletRed" Width="30" Height="30" Margin="10,0" />
+                        <TextBlock Text="Report" Style="{StaticResource MaterialDesignButtonTextBlock}"
+                                        FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
+                    </StackPanel>
+
                 </RadioButton>
 
-            </StackPanel>-->
-            
-            <!--Menu List -->
-            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Margin="0,100,10,0">
+            </StackPanel>
+
+            <!--Menu List with List-->
+            <!--  <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Margin="0,100,10,0">
                 <ListView x:Name="HomeMenuList"  Style="{StaticResource MaterialDesignNavigationAccentListBox }">
                     
-                    <!--Home-->
+                    
                     <ListViewItem x:Name="HomePg" Height="80" Selected="Navigate_HomePage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Home" Width="30" Height="30" Margin="10,0" />
-                            <TextBlock Text="Home" Style="{StaticResource MaterialDesignButtonTextBlock}" 
+                            <materialDesign:PackIcon Kind="Home" Foreground="LightCoral" Width="30" Height="30" Margin="10,0" />
+                            <TextBlock Text="Home"   Style="{StaticResource MaterialDesignButtonTextBlock}" 
                                        FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <!--DropOff-->
+                    
                     <ListViewItem x:Name="DropOffPg" Height="80" Selected="Navigate_DropOffPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="TshirtCrew" Foreground="Purple"  Width="30" Height="30" Margin="10,0" />
+                            <materialDesign:PackIcon Kind="TshirtCrew" Foreground="LightSeaGreen"  Width="30" Height="30" Margin="10,0" />
                             <TextBlock Text="Drop Off" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <!--Pick Up-->
+                    
                     <ListViewItem x:Name="PickUpPg" Height="80" Selected="Navigate_PickUpPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CreditCard" Foreground="Navy"  Width="30" Height="30"  Margin="10,0" />
+                            <materialDesign:PackIcon Kind="CreditCard" Foreground="LightSkyBlue"  Width="30" Height="30"  Margin="10,0" />
                             <TextBlock Text="Pick Up" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <!--Customer-->
+                    
                     <ListViewItem x:Name="CustomerPg" Height="80" Selected="Navigate_CustomerPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Account" Foreground="Teal" Width="30" Height="30" Margin="10,0" />
+                            <materialDesign:PackIcon Kind="Account" Foreground="MediumPurple" Width="30" Height="30" Margin="10,0" />
                             <TextBlock Text="Customer" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <!--Report-->
+                    
                     <ListViewItem x:Name="ReportPg" Height="80" Selected="Navigate_ReportPage">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ReportBar" Foreground="Maroon" Width="30" Height="30" Margin="10,0" />
+                            <materialDesign:PackIcon Kind="ReportBar" Foreground="MediumVioletRed" Width="30" Height="30" Margin="10,0" />
                             <TextBlock Text="Report" Style="{StaticResource MaterialDesignButtonTextBlock}"
                                         FontSize="20" Margin="10,0"  VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
-            
+            -->
             
 
             <!--Power Button-->
-            <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,2,5,2">
+              <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,2,5,2">
 
                 <Button x:Name="exitButton" ToolTip="Power"
                         Background="Transparent" BorderBrush="Transparent"
@@ -163,7 +176,7 @@
                         Style="{DynamicResource MaterialDesignIconButton}" Height="35" Width="35">
 
                     <StackPanel>
-                        <materialDesign:PackIcon Kind="Power" Foreground="red" Height="30" Width="30"/>
+                        <materialDesign:PackIcon Kind="Power" Foreground="Darkred" Height="30" Width="30"/>
 
                     </StackPanel>
 
