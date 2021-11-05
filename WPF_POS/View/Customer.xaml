@@ -116,21 +116,22 @@
 
             <!--DATA VIWER-->
             <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Margin="10" Style="{StaticResource MaterialDesignScrollViewer}">
-                <DataGrid x:Name="DataGridSearchCustomer" Style="{StaticResource MaterialDesignDataGrid}" FontSize="15" Background="Transparent">
+                <DataGrid x:Name="DataGridSearchCustomer" Style="{StaticResource MaterialDesignDataGrid}" FontSize="15" Background="Transparent"
+                          >
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
-                                            Header="Phone Number" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="250"/>
+                                            Header="Phone Number" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="250" CanUserReorder="False" IsReadOnly="True"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
-                                            Header="Last Name" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="300"/>
+                                            Header="Last Name" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="300" CanUserReorder="False" IsReadOnly="True"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
-                                            Header="First Name" CanUserReorder="False" CanUserResize="False" FontSize="18" MinWidth="300"/>
+                                            Header="First Name" CanUserReorder="False" CanUserResize="False" FontSize="18" MinWidth="300" IsReadOnly="True"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
-                                            Header="Mid" CanUserResize="False" FontSize="18" MaxWidth="100" MinWidth="50"/>
+                                            Header="Mid" CanUserResize="False" FontSize="18" MaxWidth="100" MinWidth="50" CanUserReorder="False" IsReadOnly="True"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
-                                            Header="Gender" CanUserResize="False" MaxWidth="100" MinWidth="50" FontSize="18"/>
+                                            Header="Gender" CanUserResize="False" MaxWidth="100" MinWidth="50" FontSize="18" CanUserReorder="False" IsReadOnly="True"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" 
-                                            Header="Last Visit" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="300"/>
+                                            Header="Last Visit" CanUserResize="False" FontWeight="Bold" FontSize="18" MinWidth="300" CanUserReorder="False" IsReadOnly="True"/>
                     </DataGrid.Columns>
 
                 </DataGrid>
